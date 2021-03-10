@@ -1,2 +1,3 @@
 <h4> This is server componet</h4>
-<p>Server - <b>{{serverName}}</b> with {{serverId}} has status as {{serverStatus}}</p>
+<p [ngStyle]="{backgroundColor:getColor()}"
+[ngClass]="{online:serverStatus==='online',offline:serverStatus==='offline'}">Server - <b>{{serverName}}</b> with ID: {{serverId}} has status as {{serverStatus}}</p>
