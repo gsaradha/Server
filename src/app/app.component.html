@@ -9,4 +9,14 @@
       <app-success-alert *ngIf='serverStatus' [serverName]="serverNameToDisplay"></app-success-alert>
     </div>
   </div>
+  <div class="row">
+    <div class="col-lg-12">
+    <hr/>
+      <label>Please enter your user name:</label>
+      <input id=username [(ngModel)]="username"/><br/>
+      <label *ngIf="username">This module was designed by : {{username}}</label><br/>
+      <button class="btn btn-primary" (click)="resetValues()"> Reset</button>
+  </div>
+  </div>
 </div>
+

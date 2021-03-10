@@ -9,9 +9,16 @@ export class AppComponent {
   title = 'server';
   serverStatus:boolean = false;
   serverNameToDisplay:string = '';
+  username:string = '';
+
+
   onServerStatus(event:Event){
     this.serverStatus = event['status'];
     this.serverNameToDisplay = event['name'];
     console.log("***"+ this.serverNameToDisplay['name']);
+  }
+
+  resetValues(){
+    this.username = '';
   }
 }
