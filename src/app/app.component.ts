@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'server';
+  serverStatus:boolean = false;
+  serverNameToDisplay:string = '';
+  onServerStatus(event:Event){
+    this.serverStatus = event['status'];
+    this.serverNameToDisplay = event['name'];
+    console.log("***"+ this.serverNameToDisplay['name']);
+  }
 }
