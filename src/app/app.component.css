@@ -4,3 +4,9 @@ h3{
 #username{
     margin:10px;
 }
+.logItem{
+    color:white;
+}
+.logLessItem{
+    color:black;
+}

@@ -10,7 +10,7 @@ allowNewServer = false;
 serverCreationStatus = 'No Server Was Created !!!';
 serverName:string ='';
 @Output() serverStatus = new EventEmitter<{status:boolean,name:string}>();
-
+servers = ['TestServer1','TestServer2'];
 
   constructor() { }
 
@@ -19,14 +19,24 @@ serverName:string ='';
 
   onCreateServer(){
     this.allowNewServer = true;
-    
   }
 
   onUpdateServerName(inputServer){
     this.serverName = (<HTMLInputElement>inputServer.target).value;
     this.serverCreationStatus= 'Server was Created!!' + this.serverName;
     this.serverStatus.emit({status:this.allowNewServer,name:this.serverName});
-    console.log(inputServer);
+   
   }
 
+  updateServerArray(){
+    let wordSearch = this.serverName;
+    setTimeout(() => {
+        if (wordSearch == this.serverName) {
+            if (this.serverName) {
+               this.servers.push(this.serverName);
+            }
+        }
+    }, 2000);
+  }
+ 
 }
