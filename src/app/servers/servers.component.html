@@ -10,10 +10,13 @@ class="btn btn-primary"
     id="serverName"
     [(ngModel)]="serverName"
     class="form-control"
-    (input)="onUpdateServerName($event)">
+    (input)="onUpdateServerName($event)"
+    (keyup)="updateServerArray()">
 </div>
 
 
 
 <p>{{serverCreationStatus}}</p>
-<app-server [serverName]="serverName"></app-server>
+<div *ngFor= "let server of servers">
+    <app-server [serverName]="server"></app-server>
+</div>
